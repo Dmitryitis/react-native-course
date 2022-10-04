@@ -8,10 +8,8 @@ function App() {
   return (
     <SafeAreaProvider>
     <NavigationContainer>
-      <StatusBar
-        animated={true}
-      />
       <AppNavigation />
+      <StatusBar animated={true} />
     </NavigationContainer>
     </SafeAreaProvider>
   );

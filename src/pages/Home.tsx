@@ -10,7 +10,7 @@ const Home = () => {
   }
 
   return <SafeAreaView style={stylesPage.container}>
-    return  <View style={styles.container}>
+    <View style={styles.container}>
     <View style={styles.coverCard}>
       <Image source={staticImage} style={styles.image} />
     </View>
