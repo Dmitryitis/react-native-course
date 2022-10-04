@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
+    "start-react": "node --trace-warnings node_modules/react-native/local-cli/cli.js start",
+    "android": "react-native run-android",
     "ios": "expo start --ios",
-    "web": "expo start --web",
-    "start-react": "react-native run-android"
+    "web": "expo start --web"
   },
   "dependencies": {
     "@react-native-community/eslint-plugin": "^1.2.0",

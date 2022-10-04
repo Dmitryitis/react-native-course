@@ -13,7 +13,7 @@ const AppNavigation = () => {
   const AppStack = createNativeStackNavigator<RootStackParamList>();
 
   return <SafeAreaView>
-    <AppStack.Navigator initialRouteName="home" screenOptions={() => ({
+    <AppStack.Navigator initialRouteName="post" screenOptions={() => ({
       headerShown: false,
     })}>
       <AppStack.Screen name="home" component={Home} />

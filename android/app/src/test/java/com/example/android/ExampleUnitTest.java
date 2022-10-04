@@ -1,4 +1,4 @@
-package com.example.react_native;
+package com.example.android;
 
 import org.junit.Test;
 
