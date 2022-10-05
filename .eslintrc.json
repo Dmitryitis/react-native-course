@@ -5,12 +5,10 @@
         "react-native/react-native": true
     },
     "extends": [
-        "airbnb",
-        "airbnb-typescript",
         "plugin:import/typescript",
         "plugin:prettier/recommended",
         "plugin:react/recommended",
-        "@react-native-community",
+        "@react-native-community"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
