@@ -1,20 +1,18 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Home from "src/pages/Home";
-import Post from "src/pages/Post";
+import { NavigationContainer } from "@react-navigation/native";
+import Home from "src/screens/Home";
 import React from 'react'
-
-export type RootStackParamList = {
-  Home: undefined;
-  Post: {postId: number};
-};
+import Counter from "src/screens/Counter";
 
 const AppNavigation = () => {
-  const AppStack = createNativeStackNavigator<RootStackParamList>();
+  const Stack = createNativeStackNavigator();
 
-  return  <AppStack.Navigator>
-    <AppStack.Screen name="Home" component={Home} />
-    <AppStack.Screen name="Post" component={Post} />
-  </AppStack.Navigator>
+  return  <NavigationContainer>
+    <Stack.Navigator initialRouteName="Home">
+    <Stack.Screen name="Home" component={Home} options={{title: 'Домашняя'}}/>
+    <Stack.Screen name="Counter" component={Counter} options={{title: 'Counter'}} />
+  </Stack.Navigator>
+  </NavigationContainer>
 }
 
 export default AppNavigation
