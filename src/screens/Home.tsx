@@ -26,6 +26,10 @@ const Home: FC = () => {
     <ButtonTouchable activeOpacity={0.7} onPress={() => onPress("Calculator")}>
       <ButtonText>Калькулятор (week4extra1)</ButtonText>
     </ButtonTouchable>
+
+    <ButtonTouchable activeOpacity={0.7} onPress={() => onPress("Articles")}>
+      <ButtonText>Articles (flexLayouts)</ButtonText>
+    </ButtonTouchable>
   </ContainerView>
 }
 
