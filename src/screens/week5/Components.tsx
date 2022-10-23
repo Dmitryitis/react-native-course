@@ -3,7 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 // @ts-ignore
 import styled from "styled-components/native";
 
-const Home: FC = () => {
+const Components: FC = () => {
   const navigation = useNavigation()
 
   const onPress = (name: String) => {
@@ -12,27 +12,21 @@ const Home: FC = () => {
     navigation.navigate(name)
   }
 
-  React.useEffect(() => {
-    navigation.setOptions({
-      title: "Домашняя"
-    })
-  },[])
-
   return <ContainerView>
-    <ButtonTouchable activeOpacity={0.7} onPress={() => onPress("Counter")}>
-      <ButtonText>Counter (week4)</ButtonText>
+    <ButtonTouchable activeOpacity={0.7} onPress={() => onPress("ButtonComponent")}>
+      <ButtonText>Button (week5)</ButtonText>
     </ButtonTouchable>
 
-    <ButtonTouchable activeOpacity={0.7} onPress={() => onPress("Calculator")}>
-      <ButtonText>Калькулятор (week4extra1)</ButtonText>
+    <ButtonTouchable activeOpacity={0.7} onPress={() => onPress("TextInput")}>
+      <ButtonText>TextInput (week5)</ButtonText>
     </ButtonTouchable>
 
-    <ButtonTouchable activeOpacity={0.7} onPress={() => onPress("Articles")}>
-      <ButtonText>Articles (flexLayouts)</ButtonText>
+    <ButtonTouchable activeOpacity={0.7} onPress={() => onPress("TextInputForm")}>
+      <ButtonText>TextInputForm (week5)</ButtonText>
     </ButtonTouchable>
 
-    <ButtonTouchable activeOpacity={0.7} onPress={() => onPress("Components")}>
-      <ButtonText>Components (week5)</ButtonText>
+    <ButtonTouchable activeOpacity={0.7} onPress={() => onPress("BoxForm")}>
+      <ButtonText>BoxForm (week5)</ButtonText>
     </ButtonTouchable>
   </ContainerView>
 }
@@ -61,4 +55,4 @@ const ButtonText = styled.Text`
   text-align: center;
 `
 
-export default Home
+export default Components
