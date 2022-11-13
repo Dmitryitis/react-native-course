@@ -30,6 +30,10 @@ const Home: FC = () => {
     <ButtonTouchable activeOpacity={0.7} onPress={() => onPress("HomeLayout")}>
       <ButtonText>FlexLayouts</ButtonText>
     </ButtonTouchable>
+
+    <ButtonTouchable activeOpacity={0.7} onPress={() => onPress("HomeNavigation")}>
+      <ButtonText>Navigation (week6)</ButtonText>
+    </ButtonTouchable>
   </ContainerView>
 }
 
