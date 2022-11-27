@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View } from "react-native";
 // @ts-ignore
 import styled from "styled-components/native";
-import BtnAC from "src/components/week4extra1/Buttons/BtnAC";
+import BtnAC from "w_homework/src/components/week4extra1/Buttons/BtnAC";
 import BtnOperation from "../components/week4extra1/Buttons/BtnOperation";
 import BtnResult from "../components/week4extra1/Buttons/BtnResult";
 import BtnOrdinary from "../components/week4extra1/Buttons/BtnOrdinary";

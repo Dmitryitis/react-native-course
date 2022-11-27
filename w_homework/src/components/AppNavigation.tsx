@@ -1,10 +1,10 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
-import Home from "src/screens/Home";
+import Home from "w_homework/src/screens/Home";
 import React from "react";
-import Counter from "src/screens/Counter";
-import Calculator from "src/screens/Calculator";
-import Articles from "src/screens/flexLayouts/Articles";
+import Counter from "w_homework/src/screens/Counter";
+import Calculator from "w_homework/src/screens/Calculator";
+import Articles from "w_homework/src/screens/flexLayouts/Articles";
 import HomeLayout from "../screens/flexLayouts/HomeLayout";
 import Users from "../screens/flexLayouts/Users";
 import User from "../screens/flexLayouts/User";

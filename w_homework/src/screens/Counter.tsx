@@ -1,8 +1,8 @@
 import React from "react";
 // @ts-ignore
 import styled from "styled-components/native";
-import CounterSimple from "src/components/week4/mode/CounterSimple";
-import CounterFontSize from "src/components/week4/mode/CounterFontSize";
+import CounterSimple from "w_homework/src/components/week4/mode/CounterSimple";
+import CounterFontSize from "w_homework/src/components/week4/mode/CounterFontSize";
 
 
 const Counter: React.FC = () => {

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { FC } from "react";
 import { Alert, Text, View } from "react-native";
-import { User as UserType } from "src/components/flexLayouts/types";
+import { User as UserType } from "w_homework/src/components/flexLayouts/types";
 // @ts-ignore
 import styled from "styled-components/native";
 import { AxiosResponse } from "axios";
-import Api from "src/api";
-import Loading from "src/components/flexLayouts/Loading";
+import Api from "w_homework/src/api";
+import Loading from "w_homework/src/components/flexLayouts/Loading";
 
 
 const User: FC = () => {

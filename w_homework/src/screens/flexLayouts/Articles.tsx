@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Alert, FlatList, RefreshControl, View } from "react-native";
-import Api from "src/api";
+import Api from "w_homework/src/api";
 import { AxiosResponse } from "axios";
-import { Article } from "src/components/flexLayouts/types";
-import Loading from "src/components/flexLayouts/Loading";
-import ArticlesItem from "src/components/flexLayouts/ArticlesItem";
+import { Article } from "w_homework/src/components/flexLayouts/types";
+import Loading from "w_homework/src/components/flexLayouts/Loading";
+import ArticlesItem from "w_homework/src/components/flexLayouts/ArticlesItem";
 
 const Articles: React.FC = () => {
 

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_URL } from "src/constants";
+import { API_URL } from "w_homework/src/constants";
 
 class Api {
   public static async getAllArticles() {

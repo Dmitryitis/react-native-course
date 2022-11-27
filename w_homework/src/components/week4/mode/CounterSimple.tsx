@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // @ts-ignore
 import styled from "styled-components/native";
-import CounterBtn from "src/components/week4/CounterBtn";
+import CounterBtn from "w_homework/src/components/week4/CounterBtn";
 
 type Signs = 'plus' | 'minus'
 
