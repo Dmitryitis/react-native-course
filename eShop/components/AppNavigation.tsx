@@ -7,7 +7,7 @@ import FavouriteBtn from "./buttons/FavouriteBtn";
 import CartScreen from "../screens/CartScreen";
 import FavouriteScreen from "../screens/FavouriteScreen";
 import ProductScreen from "../screens/ProductScreen";
-import { Button } from "react-native";
+import HomeBtn from "./buttons/HomeBtn";
 
 const AppNavigation = () => {
   const Stack = createNativeStackNavigator();
@@ -31,11 +31,7 @@ const AppNavigation = () => {
         options={({navigation}) => ({
           title: 'Product',
           headerLeft: () => (
-            <Button
-              onPress={() => navigation.popToTop()}
-              title="Home"
-              color={'#438df1'}
-            />
+           <HomeBtn />
           ),
           headerRight: () => (
             <CartBtn />

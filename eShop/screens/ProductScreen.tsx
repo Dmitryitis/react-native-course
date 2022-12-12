@@ -2,6 +2,9 @@ import React, { FC } from "react";
 import { Image, Pressable, ScrollView, Text, View } from "react-native";
 import { observer } from "mobx-react-lite";
 import CartStore from "../store/CartStore";
+import FavouriteStore from "../store/FavouriteStore";
+import { HeartIcon as HeartIconSolid } from "react-native-heroicons/solid";
+import { HeartIcon as HeartIconOutline } from "react-native-heroicons/outline";
 
 // @ts-ignore
 const ProductScreen: FC = observer(({route}) => {
@@ -41,6 +44,7 @@ const ProductScreen: FC = observer(({route}) => {
     <View style={{
       flexDirection: "row",
       alignItems: "center",
+      justifyContent: 'space-between',
       marginTop: 16,
       marginHorizontal: 16,
       marginBottom: 16
@@ -68,6 +72,21 @@ const ProductScreen: FC = observer(({route}) => {
           color: CartStore.cart.has(item.id) ? '#fff' : '#000',
         }
         }>{CartStore.cart.has(item.id) ? "Remove" : "Add to cart"}</Text>
+      </Pressable>
+
+      <Pressable
+        onPress={() => {
+          if (FavouriteStore.favourite.has(item.id)) {
+            FavouriteStore.removeFromFavourite(item.id)
+          } else {
+            FavouriteStore.addToFavourite(item.id)
+          }
+        }}>
+        {FavouriteStore.favourite.has(item.id) ?
+          <HeartIconSolid size={30} color={'#000'} />
+          :
+          <HeartIconOutline size={30} color={'#000'} />
+        }
       </Pressable>
     </View>
 

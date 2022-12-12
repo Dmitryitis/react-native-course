@@ -3,16 +3,17 @@ import { FlatList, Pressable, Text, View } from "react-native";
 import ProductStore from "../store/ProductStore";
 import CartStore from "../store/CartStore";
 import CartProduct from "../components/CartProduct";
+import { observer } from "mobx-react-lite";
 
 
-const CartScreen: FC = () => {
+const CartScreen: FC = observer(() => {
   let data = ProductStore.products.filter((product) => {
     return CartStore.cart.has(product.id)
   })
   let sum = data.map((product) => {
-    return product.price
+    return {price: product.price, id: product.id}
   }).reduce((accumulator, current) => {
-    return accumulator + parseInt(current);
+    return accumulator + parseInt(current.price) * CartStore.cartAmount.get(current.id);
   }, 0)
 
   return <View style={{
@@ -23,9 +24,7 @@ const CartScreen: FC = () => {
   }}>
     <FlatList
       data={data}
-      renderItem={({item}) => CartProduct(
-        item
-      )}
+      renderItem={({item}) => (<CartProduct product={item} />)}
       keyExtractor={(item) => item.id}
     />
     <View>
@@ -56,6 +55,6 @@ const CartScreen: FC = () => {
       </Pressable>
     </View>
   </View>
-}
+})
 
 export default CartScreen

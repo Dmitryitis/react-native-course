@@ -1,11 +1,11 @@
 import React, { FC } from "react";
-import { View } from "react-native";
 import ProductList from "../components/ProductList";
+// @ts-ignore
+import styled from "styled-components/native";
 
 const MainScreens: FC = () => {
-  return <View style={{backgroundColor: '#ffffff', flex: 1}}>
-    <ProductList />
-  </View>
+  return <ProductList />
 }
+
 
 export default MainScreens

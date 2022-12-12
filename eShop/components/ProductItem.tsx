@@ -1,16 +1,19 @@
-import { FC } from "react";
+import React, { FC } from "react";
 // @ts-ignore
 import styled from "styled-components/native";
-import { View, Text } from "react-native";
-import React from "react";
+import { Image, Pressable, Text, View } from "react-native";
 import { HeartIcon as HeartIconOutline } from "react-native-heroicons/outline";
+import { HeartIcon as HeartIconSolid } from "react-native-heroicons/solid";
 import { useNavigation } from "@react-navigation/native";
+import { Product } from "../types";
+import FavouriteStore from "../store/FavouriteStore";
+import { observer } from "mobx-react-lite";
 
 interface Props {
   product: Product
 }
 
-const ProductItem: FC<Props> = ({product}) => {
+const ProductItem: FC<Props> = observer(({product}) => {
   const navigate = useNavigation()
 
   const onClick = () => {
@@ -20,36 +23,49 @@ const ProductItem: FC<Props> = ({product}) => {
     })
   }
 
-  return <UserTouchable onPress={onClick}>
-    <View style={{flex:1,flexDirection: 'row', alignItems: 'center'}}>
-      <ArticlesItemImage source={{uri: product.avatar}} />
-      <View style={{flex: 1,flexDirection: 'column'}}>
+  return <ViewProduct>
+    <UserTouchable onPress={onClick}>
+    <Image  style={{
+      width: "100%",
+      aspectRatio: 1,
+      height: 'auto',
+      borderRadius: 10,
+    }} source={{uri: product.avatar}} />
+      <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingLeft: 10, paddingRight: 10}}>
         <Text style={{color: '#000', fontSize: 17}}>{product.title}</Text>
+        <Pressable
+          style={{marginTop:6, marginBottom: 6, alignSelf: 'flex-end', flexShrink: 0}}
+          onPress={() => {
+            if (FavouriteStore.favourite.has(product.id)) {
+              FavouriteStore.removeFromFavourite(product.id)
+            } else {
+              FavouriteStore.addToFavourite(product.id)
+            }
+          }}>
+          {FavouriteStore.favourite.has(product.id) ?
+            <HeartIconSolid size={30} color={'#000'} />
+            :
+            <HeartIconOutline size={30} color={'#000'} />
+          }
+        </Pressable>
       </View>
-    </View>
-
-    <View >
-      <HeartIconOutline size={20} color={'#000'} />
+    <View style={{flexDirection: 'column', paddingLeft: 10, paddingRight: 10, marginTop: 3, marginBottom: 15}}>
+      <Text style={{color: '#000', fontSize: 17}}>{product.price} $</Text>
     </View>
   </UserTouchable>
-}
+  </ViewProduct>
+})
 
-const UserTouchable = styled.TouchableOpacity`
+const ViewProduct = styled.View`
   width: 100%;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 10px;
+  flex-direction: column;
   background: #fff;
 `
 
-const ArticlesItemImage = styled.Image`
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-  border-radius: 50px;
-  margin-right: 10px;
+const UserTouchable = styled.TouchableOpacity`
+  width: 100%;
+  padding: 0 10px;
 `
 
 export default ProductItem
