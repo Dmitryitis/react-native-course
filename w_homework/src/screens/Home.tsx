@@ -19,20 +19,8 @@ const Home: FC = () => {
   },[])
 
   return <ContainerView>
-    <ButtonTouchable activeOpacity={0.7} onPress={() => onPress("Counter")}>
-      <ButtonText>Counter (week4)</ButtonText>
-    </ButtonTouchable>
-
-    <ButtonTouchable activeOpacity={0.7} onPress={() => onPress("Calculator")}>
-      <ButtonText>Калькулятор (week4extra1)</ButtonText>
-    </ButtonTouchable>
-
-    <ButtonTouchable activeOpacity={0.7} onPress={() => onPress("HomeLayout")}>
-      <ButtonText>FlexLayouts</ButtonText>
-    </ButtonTouchable>
-
-    <ButtonTouchable activeOpacity={0.7} onPress={() => onPress("HomeNavigation")}>
-      <ButtonText>Navigation (week6)</ButtonText>
+    <ButtonTouchable activeOpacity={0.7} onPress={() => onPress("CounterMobxScreen")}>
+      <ButtonText>CounterMobxScreen (week9c)</ButtonText>
     </ButtonTouchable>
   </ContainerView>
 }

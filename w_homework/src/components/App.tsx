@@ -1,5 +1,5 @@
-import AppNavigation from "w_homework/src/components/AppNavigation";
 import React from "react";
+import AppNavigation from "./AppNavigation";
 
 function App() {
   return (
