@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { useNavigation } from "@react-navigation/native";
 // @ts-ignore
 import styled from "styled-components/native";
+import TodoMobxScreen from "./week9b/TodoMobxScreen";
 
 const Home: FC = () => {
   const navigation = useNavigation()
@@ -20,7 +21,11 @@ const Home: FC = () => {
 
   return <ContainerView>
     <ButtonTouchable activeOpacity={0.7} onPress={() => onPress("CounterMobxScreen")}>
-      <ButtonText>CounterMobxScreen (week9c)</ButtonText>
+      <ButtonText>CounterMobxScreen (week9b)</ButtonText>
+    </ButtonTouchable>
+
+    <ButtonTouchable activeOpacity={0.7} onPress={() => onPress("TodoMobxScreen")}>
+      <ButtonText>TodoMobxScreen (week9c)</ButtonText>
     </ButtonTouchable>
   </ContainerView>
 }
