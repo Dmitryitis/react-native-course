@@ -4,6 +4,7 @@ import Home from "../screens/Home";
 import CounterMobxScreen from "../screens/week9c/CounterMobxScreen";
 import React from "react";
 import TodoMobxScreen from "../screens/week9b/TodoMobxScreen";
+import CitiesScreen from "../screens/weather/CitiesScreen";
 
 const AppNavigation = () => {
   const Stack = createNativeStackNavigator();
@@ -14,6 +15,7 @@ const AppNavigation = () => {
 
       <Stack.Screen name="CounterMobxScreen" component={CounterMobxScreen} />
       <Stack.Screen name="TodoMobxScreen" component={TodoMobxScreen} />
+      <Stack.Screen name="CitiesScreen" options={{title: 'Weather'}} component={CitiesScreen} />
   </Stack.Navigator>
   </NavigationContainer>
 }
