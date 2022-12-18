@@ -3,6 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 // @ts-ignore
 import styled from "styled-components/native";
 import TodoMobxScreen from "./week9b/TodoMobxScreen";
+import WeatherStore from "../store/WeatherStore";
 
 const Home: FC = () => {
   const navigation = useNavigation()
@@ -17,7 +18,7 @@ const Home: FC = () => {
     navigation.setOptions({
       title: "Домашняя"
     })
-  },[])
+  },[WeatherStore.selectedCity.name])
 
   return <ContainerView>
     <ButtonTouchable activeOpacity={0.7} onPress={() => onPress("CounterMobxScreen")}>
@@ -26,6 +27,10 @@ const Home: FC = () => {
 
     <ButtonTouchable activeOpacity={0.7} onPress={() => onPress("TodoMobxScreen")}>
       <ButtonText>TodoMobxScreen (week9c)</ButtonText>
+    </ButtonTouchable>
+
+    <ButtonTouchable activeOpacity={0.7} onPress={() => onPress("CitiesScreen")}>
+      <ButtonText>Weather (weather)</ButtonText>
     </ButtonTouchable>
   </ContainerView>
 }
